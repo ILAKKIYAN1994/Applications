@@ -296,14 +296,14 @@ export default function CGPACalculator() {
             className="w-20 h-20 rounded-full mx-auto mb-3 border-2 border-indigo-500"
           />
           <p className={`mb-4 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-            If you find this app useful, share your comments and feedback in my
+            If you find this app useful ❤️, share your comments and feedback in my
             LinkedIn post.
           </p>
           <a
-            href="#"
+            href="https://www.linkedin.com/posts/ilakkiyan-av_datathinking-analyticsmindset-problemsolving-activity-7417289798647873536-sNwC?utm_source=share&utm_medium=member_desktop&rcm=ACoAABk5xywB0cRilWCFQLsOQXdNTlCQILQ4Mig"
             className="inline-flex items-center gap-2 bg-indigo-600 px-6 py-2 rounded text-white"
           >
-            <Linkedin size={18} /> View LinkedIn Post (link will be added)
+            <Linkedin size={18} /> View LinkedIn Post
           </a>
         </div>
 
@@ -314,14 +314,14 @@ export default function CGPACalculator() {
             target="_blank"
             className="flex items-center gap-2 bg-blue-600 px-4 py-2 rounded text-white"
           >
-            <Linkedin size={18} /> LinkedIn
+            <Linkedin size={18} /> Follow me on LinkedIn!
           </a>
           <a
             href="https://www.youtube.com/@ilakkiyanav"
             target="_blank"
             className="flex items-center gap-2 bg-blue-600 px-4 py-2 rounded text-white"
           >
-            <Youtube size={18} /> YouTube
+            <Youtube size={18} /> Bookmark my YouTube handle!
           </a>
         </footer>
 

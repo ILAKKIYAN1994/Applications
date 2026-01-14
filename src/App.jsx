@@ -4,7 +4,8 @@ import {
   Youtube,
   Sun,
   Moon,
-  FileDown
+  FileDown,
+  Home
 } from 'lucide-react';
 import jsPDF from 'jspdf';
 import profilePic from './assets/profile.jpg';
@@ -145,7 +146,7 @@ export default function CGPACalculator() {
       <div className="max-w-6xl mx-auto">
 
         {/* Header */}
-        <div className="flex justify-between items-center mb-6">
+        <div className="flex justify-between items-center mb-4">
           <div>
             <h1 className="text-3xl font-bold">CGPA Calculator</h1>
             <p className="text-sm opacity-70">
@@ -159,6 +160,23 @@ export default function CGPACalculator() {
           >
             {darkMode ? <Sun /> : <Moon />}
           </button>
+        </div>
+
+        {/* ✅ Homepage Button (ONLY ADDITION) */}
+        <div className="mb-6 flex justify-end">
+          <a
+            href="https://www.ilakkiyan.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`flex items-center gap-2 px-4 py-2 rounded-md text-sm font-medium transition
+              ${darkMode
+                ? 'bg-gray-800 text-gray-200 hover:bg-gray-700'
+                : 'bg-white text-gray-800 hover:bg-gray-100 border'}
+            `}
+          >
+            <Home size={16} />
+            Go to Homepage
+          </a>
         </div>
 
         {/* Subject Rows */}
@@ -190,29 +208,43 @@ export default function CGPACalculator() {
                 </div>
 
                 <div className="grid grid-cols-2 md:grid-cols-5 gap-4 md:w-2/3 text-center">
-                  {[
-                    ['Internal (30)', marks[course.code].internal, 'internal'],
-                    ['External (70)', marks[course.code].external, 'external']
-                  ].map(([label, value, type]) => (
-                    <div key={label}>
-                      <div className={`text-xs mb-1 ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
-                        {label}
-                      </div>
-                      <input
-                        type="number"
-                        placeholder={label === 'Internal (30)' ? '0-30' : '0-70'}
-                        value={value}
-                        onChange={(e) =>
-                          handleChange(course.code, type, e.target.value)
-                        }
-                        className={`w-full rounded-md px-2 py-1 text-center border
-                          ${darkMode
-                            ? 'bg-gray-700 text-white border-gray-600'
-                            : 'bg-white text-gray-800 border-gray-300'}
-                        `}
-                      />
+                  <div>
+                    <div className={`text-xs mb-1 ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
+                      Internal (30)
                     </div>
-                  ))}
+                    <input
+                      type="number"
+                      placeholder="0-30"
+                      value={marks[course.code].internal}
+                      onChange={(e) =>
+                        handleChange(course.code, 'internal', e.target.value)
+                      }
+                      className={`w-full rounded-md px-2 py-1 text-center border
+                        ${darkMode
+                          ? 'bg-gray-700 text-white border-gray-600'
+                          : 'bg-white text-gray-800 border-gray-300'}
+                      `}
+                    />
+                  </div>
+
+                  <div>
+                    <div className={`text-xs mb-1 ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
+                      External (70)
+                    </div>
+                    <input
+                      type="number"
+                      placeholder="0-70"
+                      value={marks[course.code].external}
+                      onChange={(e) =>
+                        handleChange(course.code, 'external', e.target.value)
+                      }
+                      className={`w-full rounded-md px-2 py-1 text-center border
+                        ${darkMode
+                          ? 'bg-gray-700 text-white border-gray-600'
+                          : 'bg-white text-gray-800 border-gray-300'}
+                      `}
+                    />
+                  </div>
 
                   <div>
                     <div className={`text-xs mb-1 ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
@@ -264,13 +296,14 @@ export default function CGPACalculator() {
             className="w-20 h-20 rounded-full mx-auto mb-3 border-2 border-indigo-500"
           />
           <p className={`mb-4 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-            If you find this app useful ❤️, share your comments and feedback in my LinkedIn post.
+            If you find this app useful, share your comments and feedback in my
+            LinkedIn post.
           </p>
           <a
-            href="https://www.linkedin.com/posts/ilakkiyan-av_datathinking-analyticsmindset-problemsolving-activity-7417289798647873536-sNwC?utm_source=share&utm_medium=member_desktop&rcm=ACoAABk5xywB0cRilWCFQLsOQXdNTlCQILQ4Mig"
+            href="#"
             className="inline-flex items-center gap-2 bg-indigo-600 px-6 py-2 rounded text-white"
           >
-            <Linkedin size={18} /> View LinkedIn Post
+            <Linkedin size={18} /> View LinkedIn Post (link will be added)
           </a>
         </div>
 

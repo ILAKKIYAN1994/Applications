@@ -280,7 +280,7 @@ export default function CGPACalculator() {
             onClick={exportToPDF}
             className="inline-flex items-center gap-2 px-6 py-2 bg-indigo-600 text-white rounded active:scale-95"
           >
-            <FileDown size={18} /> Export CGPA as PDF
+            <FileDown size={18} /> Export the Score Card as PDF
           </button>
         </div>
 
